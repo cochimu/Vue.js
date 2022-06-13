@@ -1,4 +1,5 @@
 # Vue.js
 
-### Youtube
-- https://www.youtube.com/watch?v=cL3Al628mLE
+### たにぐちまことさん
+#### Vue.js入門
+- 01(https://www.youtube.com/watch?v=cL3Al628mLE)
