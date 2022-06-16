@@ -14,3 +14,5 @@
   - https://www.youtube.com/watch?v=lZGtYit4wLc
 - 07_sample06_アニメーション
   - https://www.youtube.com/watch?v=S0b1ZBIooyY
+- 08_sample07_component
+  - https://www.youtube.com/watch?v=vD7fZY2F_Kc
