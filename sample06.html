@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		.flip-list-move {
+			transition: transform .5s;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+		<button v-on:click="shuffle">シャッフル</button>
+
+		<!-- ulタグの代わりにtransition-groupを使う -->
+		<!-- tag="ul"でhtmlにするときにはulタグにするように指示 -->
+		<transition-group name="flip-list" tag="ul">
+			<!-- v-bind:keyが必要 -->
+			<!-- v-bind:keyは:keyに省略可能 -->
+			<li v-for="pref in prefs" :key="pref.name">
+				{{ pref.name }}
+			</li>
+		</transition-group>
+			
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+	<!-- シャッフルは https://lodash.com/　lodashを使う -->
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				prefs: [
+					{ name: '北海道'},
+					{ name: '青森県'},
+					{ name: '岩手県'},
+					{ name: '宮城県'},
+					{ name: '山形県'},
+					{ name: '福島県'},
+				]
+			},
+
+			
+			methods: {
+				shuffle: function() {
+					//https://lodash.com/　lodashを使う
+					this.prefs = _.shuffle(this.prefs);
+				}
+			}
+		});
+	</script>
+	
+</body>
+</html>
